@@ -1,0 +1,72 @@
+{
+  "drivers": [
+    {
+      "id": "8",
+      "name": "Jit Man",
+      "address": "Bhaktapur",
+      "contact": "9875745454",
+      "isBooked": true
+    },
+    {
+      "id": "13",
+      "name": "Raj Shakya",
+      "address": "Raniban",
+      "contact": "9837483242",
+      "isBooked": true
+    },
+    {
+      "id": "14",
+      "name": "Shyam Bahadur",
+      "address": "Balkhu",
+      "contact": "98097329422",
+      "isBooked": false
+    },
+    {
+      "id": "15",
+      "name": "Hari",
+      "address": "Teku",
+      "contact": "98043848785",
+      "isBooked": true
+    },
+    {
+      "id": "15",
+      "name": "Gauri",
+      "address": "Tokha",
+      "contact": "9748752348",
+      "isBooked": false
+    },
+    {
+      "id": "18",
+      "name": "Sita ",
+      "address": "Kuleshwor",
+      "contact": "9839424233",
+      "isBooked": false
+    }
+  ],
+  "users": [
+    {
+      "id": "5dc6",
+      "name": "sdfsa",
+      "address": "sfdsaf",
+      "phone": "543523",
+      "email": "santa@gmail.com",
+      "password": "sdfasdf"
+    },
+    {
+      "id": "9430",
+      "name": "Sona Shrestha",
+      "address": "Paknajol",
+      "phone": "9894784373",
+      "email": "sonastha@gmail.com",
+      "password": "sonastha"
+    },
+    {
+      "id": "94af",
+      "name": "Sujal Manandhar",
+      "address": "Patan",
+      "phone": "9284938283",
+      "email": "sujalmdr@gmail.com",
+      "password": "sujalmdr"
+    }
+  ]
+}

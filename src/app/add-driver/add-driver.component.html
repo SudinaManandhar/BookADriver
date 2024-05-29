@@ -1,0 +1,34 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<div class="popup-form">
+  <h3 class = "popop-title">Add A Driver</h3><br>
+  <form [formGroup]="driverForm" (ngSubmit)="onSubmit()">
+    <label for="id" class="form-label popup-label">Id:</label>
+    <input id="id" class = "form-control popup-input" formControlName="id" type="text"><br>
+
+    <label for="name" class="form-label popup-label">Name</label>
+    <input id="name" class = "form-control popup-input" formControlName="name" type="text"><br>
+
+    <label for="address" class="form-label popup-label">Address:</label>
+    <input id="address" class = "form-control popup-input" formControlName="address" type="text"><br>
+
+    <label for="contact" class="form-label popup-label">Contact:</label>
+    <input id="contact" class = "form-control popup-input" formControlName="contact" type="text"><br>
+
+    <label for="rate" class="form-label popup-label">Hourly Rate:</label>
+    <input id="rate" class = "form-control popup-input" formControlName="rate" type="text"><br>
+
+    <!-- <label for="availability" class="form-label popup-label">Availability:</label>
+    <input id="availability" class = "form-control popup-input" formControlName="availability" type="text"><br>
+
+    <label for="type" class="form-label popup-label">Vehicle Type:</label>
+    <input id="type" class = "form-control popup-input" formControlName="type" type="text"><br> -->
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Add Driver</button>&nbsp;
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+    </div>
+    <!-- <button type="submit" class="form-label">Add Driver</button>
+    <button type="button" (click)="onCancel()">Cancel</button> -->
+  </form>
+</div>

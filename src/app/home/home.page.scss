@@ -1,0 +1,124 @@
+// body {
+//   background-color: #f8f9fa;
+// }
+// .wrapper {
+//   text-align: center;
+//   margin-top: 15%;
+// }
+// ion-button {
+//   padding: 12px 30px;
+//   font-size: 20px;
+// }
+
+section{
+  padding: 2rem 9%;
+}
+
+.home{
+  align-items: center;
+  min-height: 85vh;
+  background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,8,30,0.7)),url(/assets/drive.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: left;
+}
+
+.home .content{
+  max-width: 50rem;
+  padding-top: 5rem;
+  
+}
+
+.home .content h3{
+  font-size: 3rem;
+  color: floralwhite;
+  font-weight:800;
+}
+
+.home .content span{
+  font-size: 2.5rem;
+  color: #CC7752;
+  padding: 1.5rem 0;
+  line-height: 1.5;
+  font-weight:bold;
+}
+
+button {
+  background-color: #45A29E; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin-top:1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius:2rem;
+}
+
+button:hover{
+  scale: 1.05;
+}
+
+.services-container{
+  width: 100%;
+  margin:auto;
+  text-align:center;
+  padding-top: 50px;
+  background:F9F5F6;
+  color:#F9F5F6;
+}
+
+h1{
+  font-size:36px;
+  font-weight:600;
+  text-align: center;
+  color: #191919;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  
+}
+
+.row{
+  margin-top:3.5%;
+  display: flex;
+  justify-content: space-between;
+
+}
+.box{
+  flex-basis:31%;
+  background:#C4DFDF;
+  /* border-radius:3rem; */
+  margin-bottom:5%;
+  /* padding:20px 12px; */
+  padding: 2rem 2rem 2rem 2rem;
+  box-sizing:border-box;
+  transition:0.5s;
+}
+.box i{
+  padding: 10px;
+  background-color: rgb(3, 108, 105);
+  border-radius: 50%;
+  font-size: 20px;
+  color:#f6f6f6;
+}
+
+.box p{
+  text-align:justify;
+  color:#191919;
+}
+
+.box:hover{
+  background-color: #45A29E;
+  box-shadow:0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+.box h3{
+  color:#191919;
+  text-align:center;
+  font-weight:700;
+  margin: 12px 0;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}

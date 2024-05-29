@@ -1,0 +1,22 @@
+ion-toolbar.nav{
+    --background: #191919;
+    --color: #fff;
+}
+
+ion-button.login, ion-button.logout{
+    --background: #ecad0c;
+    --border-radius:15px;
+    --padding: 5px;
+}
+
+ion-button a{
+    padding: 8px;
+}
+
+ion-buttons{
+    margin-right: 5%;
+}
+
+ion-title{
+    margin-left: 5%;
+}

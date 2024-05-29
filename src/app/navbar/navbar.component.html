@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<ion-header>
+  <ion-toolbar class = "nav">
+    
+      <ion-title class = "title" routerLink = "/home">
+        BookYourDriver
+      </ion-title>
+    
+      <ion-buttons slot="end">
+
+        <ion-button routerLink="/bookedDrivers" routerDirection="forward" routerLinkActive="active">
+         &nbsp; View Booked Drivers
+        </ion-button>
+
+        <ion-button class="login"*ngIf="!this.commonService.isLoggedIn" routerLink="/login" routerDirection="forward" routerLinkActive="active">
+          <ion-icon name="person-outline"></ion-icon> &nbsp; Login
+        </ion-button>
+
+        <ion-button class = "logout" *ngIf="this.commonService.isLoggedIn" (click) = "logout()" routerDirection="forward" routerLinkActive="active">
+           Logout
+        </ion-button>
+
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
