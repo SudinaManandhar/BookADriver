@@ -8,12 +8,13 @@
   </div>
   
   <div class="table">
-    <table class="table table-success table-striped w-75" alignment="center">
+    <table class="table table-success table-striped" alignment="center">
       <thead>
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Address</th>
           <th scope="col">Contact</th>
+          <th scope="col">Hourly Rate</th>
           <th scope="col">Delete</th>
         </tr>
       </thead>
@@ -22,13 +23,14 @@
           <td>{{ driver.name }}</td>
           <td>{{ driver.address }}</td>
           <td>{{ driver.contact }}</td>
+          <td>{{ driver.rate }}</td>
           <td><button (click)="openDeletePopup(driver.id)" class = "btn btn-danger" tooltip="Delete Driver" placement="top"><i class="fas fa-trash"></i></button></td>
         </tr>
       </tbody>
     </table>
   </div>
     <div class="btns">
-      <ion-button (click)="onBookDriver()">Book A Driver</ion-button>
+      <ion-button (click)="onBookDriver()">Book A Driver</ion-button>&nbsp;
       <ion-button (click)="onAddDriver()">Add A Driver</ion-button>
     </div>
     

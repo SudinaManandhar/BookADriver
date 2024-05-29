@@ -3,26 +3,44 @@
 <div class="popup-form">
   <h3 class = "popop-title">Add A Driver</h3><br>
   <form [formGroup]="driverForm" (ngSubmit)="onSubmit()">
-    <label for="id" class="form-label popup-label">Id:</label>
-    <input id="id" class = "form-control popup-input" formControlName="id" type="text"><br>
-
-    <label for="name" class="form-label popup-label">Name</label>
-    <input id="name" class = "form-control popup-input" formControlName="name" type="text"><br>
-
-    <label for="address" class="form-label popup-label">Address:</label>
+    <div class="row g-3">
+      <div class="col">
+        <label for="id" class="form-label popup-label">Id:</label>
+        <input id="id" class = "form-control popup-input" formControlName="id" type="text"><br>
+      </div>
+      
+      <div class="col">
+        <label for="name" class="form-label popup-label">Name</label>
+      <input id="name" class = "form-control popup-input" formControlName="name" type="text"><br>
+      </div>
+    </div>
+    
+    <div class="row g-3">
+      <div class="col">
+        <label for="address" class="form-label popup-label">Address:</label>
     <input id="address" class = "form-control popup-input" formControlName="address" type="text"><br>
+      </div>
+      
+      <div class="col">
+        <label for="contact" class="form-label popup-label">Contact:</label>
+        <input id="contact" class = "form-control popup-input" formControlName="contact" type="text"><br>
+      </div>
+    </div>
 
-    <label for="contact" class="form-label popup-label">Contact:</label>
-    <input id="contact" class = "form-control popup-input" formControlName="contact" type="text"><br>
-
-    <label for="rate" class="form-label popup-label">Hourly Rate:</label>
-    <input id="rate" class = "form-control popup-input" formControlName="rate" type="text"><br>
-
-    <!-- <label for="availability" class="form-label popup-label">Availability:</label>
-    <input id="availability" class = "form-control popup-input" formControlName="availability" type="text"><br>
+    <div class="row g-3">
+      <div class="col">
+        <label for="rate" class="form-label popup-label">Hourly Rate:</label>
+        <input id="rate" class = "form-control popup-input" formControlName="rate" type="number"><br>
+      </div>
+      
+      <div class="col">
+        <label for="availability" class="form-label popup-label">Availability:</label>
+        <input id="availability" class = "form-control popup-input" formControlName="availability" type="text"><br>
+      </div>
+    </div>
 
     <label for="type" class="form-label popup-label">Vehicle Type:</label>
-    <input id="type" class = "form-control popup-input" formControlName="type" type="text"><br> -->
+    <input id="type" class = "form-control popup-input" formControlName="type" type="text"><br>
 
     <div class="col-auto">
       <button type="submit" class="btn btn-primary">Add Driver</button>&nbsp;

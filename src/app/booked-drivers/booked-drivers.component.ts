@@ -11,6 +11,8 @@ import { Location } from '@angular/common';
 export class BookedDriversComponent  implements OnInit {
 
   drivers: any[]=[];
+  showDetailsPopup: boolean = false;
+  selectedDriverId: string | undefined;
   
   constructor(private driverService: DriverService, private newService: NewServiceService, private location: Location) { }
 
@@ -26,6 +28,21 @@ export class BookedDriversComponent  implements OnInit {
 
 openDeletePopup(driverId: number) {
   this.newService.showPopup(driverId);
+}
+
+openDetailsPopup(driverId: string){
+  this.selectedDriverId = driverId;
+  console.log(driverId);
+  this.showDetailsPopup = true;
+}
+
+closeDetailsPopup() {
+  this.showDetailsPopup = false;
+  this.selectedDriverId = undefined;
+}
+
+onPopUpClosed(){
+  this.showDetailsPopup = false;
 }
 
 goBack(){

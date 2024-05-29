@@ -1,15 +1,3 @@
-.list{
-    margin-top: 10%;
-}
-
-.card{
-    margin-top: 5%;
-}
-
-.btns{
-    margin-top: 5%;
-}
-
 .popup-form {
     position: fixed;
     width: 700px;
@@ -24,8 +12,13 @@
     color: black;
   }
 
+  .col-auto{
+    display:flex;
+    justify-content: center;
+  }
+
   button{
-    border-radius: 2rem;
+    border-radius:2rem;
   }
 
   button:hover{

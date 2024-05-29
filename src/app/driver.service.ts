@@ -31,5 +31,10 @@ import { Observable } from 'rxjs';
       const url = `${this.apiUrl}/${id}`;
       return this.http.get<Driver>(url);
     }
+
+    getDriverByid(id: string): Observable<Driver> {
+      const url = `${this.apiUrl}/${id}`;
+      return this.http.get<Driver>(url);
+    }
   }
 

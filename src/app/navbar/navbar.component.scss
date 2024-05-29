@@ -9,6 +9,10 @@ ion-button.login, ion-button.logout{
     --padding: 5px;
 }
 
+ion-button:hover{
+    scale: 1.05;
+}
+
 ion-button a{
     padding: 8px;
 }

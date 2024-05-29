@@ -40,7 +40,7 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css";
 
 body{
-    background: beige;
+    background: beige !important;
 }
 
 .header-md{
@@ -51,4 +51,12 @@ body{
   ion-modal{
     --height: 300px;
     --overflow: auto;
+  }
+
+  button{
+    border-radius:2rem;
+  }
+
+  button:hover{
+    scale: 1.05;
   }

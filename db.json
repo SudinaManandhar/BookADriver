@@ -1,45 +1,43 @@
 {
   "drivers": [
     {
-      "id": "8",
-      "name": "Jit Man",
-      "address": "Bhaktapur",
-      "contact": "9875745454",
-      "isBooked": true
-    },
-    {
-      "id": "13",
-      "name": "Raj Shakya",
-      "address": "Raniban",
-      "contact": "9837483242",
-      "isBooked": true
-    },
-    {
-      "id": "14",
-      "name": "Shyam Bahadur",
-      "address": "Balkhu",
-      "contact": "98097329422",
-      "isBooked": false
-    },
-    {
-      "id": "15",
-      "name": "Hari",
-      "address": "Teku",
-      "contact": "98043848785",
-      "isBooked": true
-    },
-    {
-      "id": "15",
-      "name": "Gauri",
-      "address": "Tokha",
-      "contact": "9748752348",
-      "isBooked": false
-    },
-    {
       "id": "18",
-      "name": "Sita ",
-      "address": "Kuleshwor",
-      "contact": "9839424233",
+      "name": "Simon Ghimire",
+      "address": "Pulchowk",
+      "contact": "9809787437",
+      "rate": "100",
+      "availability": "Kathmandu",
+      "type": "Maruti Suzuki",
+      "isBooked": true
+    },
+    {
+      "id": "1",
+      "name": "Ram Khadka",
+      "address": "Patan",
+      "contact": "9837483243",
+      "rate": 150,
+      "availability": "Lalitpur",
+      "type": "Maruti Suzuki",
+      "isBooked": true
+    },
+    {
+      "id": "2",
+      "name": "Saira Maharjan",
+      "address": "Dhulikhel",
+      "contact": "9875745454",
+      "rate": 120,
+      "availability": "Bhaktapur",
+      "type": "Maruti Suzuki",
+      "isBooked": false
+    },
+    {
+      "id": "3",
+      "name": "Tim Shrestha",
+      "address": "Balaju",
+      "contact": "9893258748",
+      "rate": 100,
+      "availability": "Kathmandu",
+      "type": "Alto",
       "isBooked": false
     }
   ],

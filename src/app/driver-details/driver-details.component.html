@@ -1,0 +1,16 @@
+
+<div class="popup-form">
+    <div class="modal-header">
+      <h2>Driver Details</h2>
+    </div>
+    <div class="modal-body">
+      <p><strong>Name:</strong> {{ driver?.name }}</p>
+      <p><strong>Address:</strong> {{ driver?.address }}</p>
+      <p><strong>Contact:</strong> {{ driver?.contact }}</p>
+      <p><strong>Hourly Rate:</strong> {{ driver?.rate }}</p>
+      <p><strong>Vehicle Type:</strong> {{ driver?.type }}</p>
+    </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-primary" (click)="onClose()">Ok</button>
+  </div>
+</div>

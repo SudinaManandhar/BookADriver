@@ -1,25 +1,43 @@
 h2{
     color: #191919;
+    font-size:xx-large !important;
 }
 .table{
-    margin-top: 0.25%;
-    margin-left:5.5%;
+    margin-top: 1%;
+}
+
+td,th{
+    padding-left:5% !important;
 }
 
 .heading{
     margin-top:2%;
-    display: flex;
-    justify-content: center;
+    margin-left:5%;
 }
 
 .btns{
     display: flex;
     justify-content: center;
-    
 }
 
 .back{
     display: flex;
     justify-content: right;
     margin: 10px 20px 0px 0px;
+}
+
+ion-button{
+    --border-radius: 2rem;
+}
+
+button{
+    border-radius: 2rem;
+}
+
+button:hover{
+    scale: 1.05;
+  }
+
+ion-button:hover{
+    scale: 1.05;
 }
