@@ -7,9 +7,32 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard], data: { role: 'user' }
   },
-  
+  // {
+  //   path: 'admin-home',
+  //   loadChildren: () => import('./admin-navbar/admin-navbar.module').then( m => m.AdminNavbarModule),
+  //   canActivate: [AuthGuard], data: { role: 'admin' }
+  // },
+  {
+    path: 'admin-dashboard',
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardModule),
+    canActivate: [AuthGuard], data: { role: 'admin' }
+  },
+  {
+    path: 'customer-list',
+    loadChildren: () => import('./admin-customer-list/admin-customer-list.module').then( m => m.AdminCustomerListModule)
+    // canActivate: [AuthGuard], data: { role: 'admin' }
+  },
+  {
+    path: 'driver-list',
+    loadChildren: () => import('./driver-list/driver-list.module').then( m => m.DriverListModule)
+  },
+  {
+    path: 'booking-list',
+    loadChildren: () => import('./admin-booking/admin-booking.module').then( m => m.AdminBookingModule)
+    // canActivate: [AuthGuard], data: { role: 'admin' }
+  },
   {
     path: '',
     redirectTo: 'home',
@@ -17,8 +40,9 @@ const routes: Routes = [
   },
   {
     path:'bookedDrivers',
-    loadChildren: () => import('./booked-drivers/booked-drivers.module').then(m => m.BookedDriversModule)
-    // canActivate: [AuthGuard]
+    title: 'Booked Drivers | BookADriver',
+    loadChildren: () => import('./booked-drivers/booked-drivers.module').then(m => m.BookedDriversModule),
+    canActivate: [AuthGuard], data: { role : 'user'}
   },
   {
     path:'login',

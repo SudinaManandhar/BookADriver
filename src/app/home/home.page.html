@@ -3,45 +3,47 @@
     <p>Share rides with ease and convenience</p>
     <ion-button *ngIf="this.commonService.isLoggedIn" routerLink = "/home/driverList">Book A Driver</ion-button>
 </div> -->
+<body>
+  <section class ="home" id="home">
+    <div class ="content">
+        <h3>Welcome to our Ride Sharing Service</h3>
+        <span>Share rides with ease and convenience</span>
+        <div class="btn">
+          <button *ngIf="this.commonService.isUser" routerLink = "/home/driverList">Book A Driver</button>
+        </div>
+    </div>
+  </section>
+  
+  <section class = "services-container" id="services">
+    <h2>Our Services</h2>
+    <div class = "row">
+        <!-- Box-1 -->
+        <div class="box">
+            <i class = "fa fa-car" aria-hidden="true"></i><br/>
+            <h3>Fully Insured Rides</h3>
+            <p>We provide courses that you can select based on your preferences. Depending on the knowledge and comfort level of the students, we provide beginner and expert courses.
+            </p>
+        </div>
+  
+        <!-- Box-2 -->
+        <div class="box">
+            <i class = "fa fa-book" aria-hidden="true"></i><br/>
+            <h3>Easy Booking</h3>
+            <p>We want to make it simple for customers to schedule rides as needed. We present them with a range of timings from which they can select the day and time that work best for them.
+            </p>
+        </div>
+  
+        <!-- Box-3 -->
+        <div class="box">
+            <i class = "fas fa-tag" aria-hidden="true"></i><br/>
+            <h3>Reasonable Pricing</h3>
+            <p>For the courses, fair rates have been established so that you can take use of the offered services. We want the customers to have the best services possible at the lowest possible cost.
+            </p>
+        </div>
+    </div>
+  </section>
+</body>
 
-<section class ="home" id="home">
-  <div class ="content">
-      <h3>Welcome to our Ride Sharing Service</h3>
-      <span>Share rides with ease and convenience</span>
-      <div class="btn">
-        <button *ngIf="this.commonService.isLoggedIn" routerLink = "/home/driverList">Book A Driver</button>
-      </div>
-  </div>
-</section>
-
-<section class = "services-container" id="services">
-  <h1>Our Services</h1>
-  <div class = "row">
-      <!-- Box-1 -->
-      <div class="box">
-          <i class = "fa fa-car" aria-hidden="true"></i><br/>
-          <h3>Driving Courses</h3>
-          <p>We provide courses that you can select based on your preferences. Depending on the knowledge and comfort level of the students, we provide beginner and expert courses.
-          </p>
-      </div>
-
-      <!-- Box-2 -->
-      <div class="box">
-          <i class = "fa fa-book" aria-hidden="true"></i><br/>
-          <h3>Easy Booking</h3>
-          <p>We want to make it simple for students to schedule driving lessons as needed. We present them with a range of timings from which they can select the day and time that work best for them.
-          </p>
-      </div>
-
-      <!-- Box-3 -->
-      <div class="box">
-          <i class = "fas fa-tag" aria-hidden="true"></i><br/>
-          <h3>Reasonable Pricing</h3>
-          <p>For the courses, fair rates and fees have been established so that you can take use of the offered services. We want the students to have the best education possible at the lowest possible cost.
-          </p>
-      </div>
-  </div>
-</section>
 
 
   <!-- Bootstrap JS (optional) -->

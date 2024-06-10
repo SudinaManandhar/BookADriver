@@ -8,7 +8,7 @@
       "rate": "100",
       "availability": "Kathmandu",
       "type": "Maruti Suzuki",
-      "isBooked": true
+      "isBooked": false
     },
     {
       "id": "1",
@@ -28,7 +28,7 @@
       "rate": 120,
       "availability": "Bhaktapur",
       "type": "Maruti Suzuki",
-      "isBooked": false
+      "isBooked": true
     },
     {
       "id": "3",
@@ -38,33 +38,123 @@
       "rate": 100,
       "availability": "Kathmandu",
       "type": "Alto",
-      "isBooked": false
+      "isBooked": true
     }
   ],
   "users": [
-    {
-      "id": "5dc6",
-      "name": "sdfsa",
-      "address": "sfdsaf",
-      "phone": "543523",
-      "email": "santa@gmail.com",
-      "password": "sdfasdf"
-    },
     {
       "id": "9430",
       "name": "Sona Shrestha",
       "address": "Paknajol",
       "phone": "9894784373",
       "email": "sonastha@gmail.com",
-      "password": "sonastha"
+      "password": "sonastha",
+      "role": "user"
     },
     {
-      "id": "94af",
-      "name": "Sujal Manandhar",
-      "address": "Patan",
-      "phone": "9284938283",
-      "email": "sujalmdr@gmail.com",
-      "password": "sujalmdr"
+      "id": "c356",
+      "name": "Garima Shrestha",
+      "address": "Bhaktapur",
+      "phone": "9890484745",
+      "email": "garimastha@gmail.com",
+      "password": "garimastha",
+      "role": "user"
+    },
+    {
+      "email": "admin123@gmail.com",
+      "password": "admin123",
+      "role": "admin",
+      "id": "2327"
+    }
+  ],
+  "booked": [
+    {
+      "id": "2c78",
+      "user": {
+        "id": "c356",
+        "name": "Garima Shrestha",
+        "address": "Bhaktapur",
+        "phone": "9890484745",
+        "email": "garimastha@gmail.com",
+        "password": "garimastha",
+        "role": "user"
+      },
+      "driver": {
+        "id": "3",
+        "name": "Tim Shrestha",
+        "address": "Balaju",
+        "contact": "9893258748",
+        "rate": 100,
+        "availability": "Kathmandu",
+        "type": "Alto",
+        "isBooked": false
+      }
+    },
+    {
+      "id": "1c15",
+      "user": {
+        "id": "9430",
+        "name": "Sona Shrestha",
+        "address": "Paknajol",
+        "phone": "9894784373",
+        "email": "sonastha@gmail.com",
+        "password": "sonastha",
+        "role": "user"
+      },
+      "driver": {
+        "id": "2",
+        "name": "Saira Maharjan",
+        "address": "Dhulikhel",
+        "contact": "9875745454",
+        "rate": 120,
+        "availability": "Bhaktapur",
+        "type": "Maruti Suzuki",
+        "isBooked": false
+      }
+    },
+    {
+      "id": "e0e2",
+      "user": {
+        "id": "9430",
+        "name": "Sona Shrestha",
+        "address": "Paknajol",
+        "phone": "9894784373",
+        "email": "sonastha@gmail.com",
+        "password": "sonastha",
+        "role": "user"
+      },
+      "driver": {
+        "id": "1",
+        "name": "Ram Khadka",
+        "address": "Patan",
+        "contact": "9837483243",
+        "rate": 150,
+        "availability": "Lalitpur",
+        "type": "Maruti Suzuki",
+        "isBooked": false
+      }
+    },
+    {
+      "id": "abfe",
+      "user": {
+        "id": "c530",
+        "name": "Daina",
+        "address": "Delhi",
+        "phone": "9890384922",
+        "email": "diana@gmail.com",
+        "password": "daina",
+        "role": "user"
+      },
+      "driver": {
+        "id": "18",
+        "name": "Simon Ghimire",
+        "address": "Pulchowk",
+        "contact": "9809787437",
+        "rate": "100",
+        "availability": "Kathmandu",
+        "type": "Maruti Suzuki",
+        "isBooked": false
+      }
     }
   ]
 }

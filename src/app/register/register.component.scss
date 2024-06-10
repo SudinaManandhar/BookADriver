@@ -59,6 +59,14 @@ body{
     border: 1px solid #ccc;
     border-radius: 3px;
   }
+
+  button{
+    border-radius: 2rem !important;
+}
+
+button:hover{
+    scale: 1.05;
+}
   
   /* Responsive adjustments */
   @media (max-width: 768px) {

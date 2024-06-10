@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
   <div class="back">
-    <button (click)="goBack()" class = "btn btn-secondary"><i class="fas fa-angle-left"></i>&nbsp;Back</button>
+    <button (click)="goBack()" class = "btn1"><i class="fas fa-angle-left"></i>&nbsp;Back</button>
   </div>
   
   <div class="heading">
@@ -10,7 +10,7 @@
   </div>
   
   <div class="table">
-    <table class="table table-success table-striped" alignment = "center">
+    <table class="table" alignment = "center">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -26,8 +26,8 @@
           <td>{{ driver.address }}</td>
           <td>{{ driver.contact }}</td>
           <td>{{ driver.rate}}</td>
-          <td><button (click)="openDeletePopup(driver.id)" class = "btn btn-danger" ngbTooltip = "Delete Driver" placement="bottom"><i class="fas fa-trash"></i></button>&nbsp;
-            <button (click)="openDetailsPopup(driver.id)" class = "btn btn-primary" tooltip="View Details" placement="bottom"><i class="fas fa-eye"></i></button></td>
+          <td><button (click)="openDeletePopup(driver.id)" class = "btn" tooltip = "Delete Driver" placement="top" container="body"><i class="fas fa-trash"></i></button>&nbsp;
+              <button (click)="openDetailsPopup(driver.id)" class = "btn" tooltip="View Details" placement="top" container="body"><i class="fas fa-eye"></i></button></td>
         </tr>
       </tbody>
     </table>

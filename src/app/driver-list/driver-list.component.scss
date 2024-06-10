@@ -3,28 +3,61 @@ h2{
     font-size:xx-large !important;
 }
 .table{
-    margin-top: 1%;
+    margin: 2% 2.5% 0% 2.5%;
+    width: 95%;
 }
 
 td,th{
     padding-left:5% !important;
+    background-color: #C4DFDF;
+}
+
+tr:hover td{
+    background-color:#45A29E;
 }
 
 .heading{
-    margin-top:2%;
+    margin-top:4%;
     margin-left:5%;
 }
 
 .btns{
+    margin-top: 2%;
     display: flex;
     justify-content: center;
 }
 
 .back{
-    display: flex;
-    justify-content: right;
-    margin: 10px 20px 0px 0px;
+    display: inline;
+    float: inline-end;
+    margin: 3% 5% 0% 0%;
 }
+
+.fa-trash{
+    color:#dc0000;
+}
+
+.btn {
+    background-color: aliceblue;
+    border: none;
+}
+
+.btn1 {
+    background-color: #6b6b6b; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    margin-top:1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:2rem;
+  }
+  
+  .btn1:hover{
+    scale: 1.05;
+  }
 
 ion-button{
     --border-radius: 2rem;
@@ -32,6 +65,10 @@ ion-button{
 
 button{
     border-radius: 2rem;
+}
+
+button.book, button.add{
+    background-color:#45A29E !important;
 }
 
 button:hover{

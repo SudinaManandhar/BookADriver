@@ -1,4 +1,6 @@
-
-  <app-navbar></app-navbar>
-  <router-outlet><router-outlet>
+  <!-- <app-admin-navbar *ngIf = "isLoggedIn && userRole === 'admin'"></app-admin-navbar> -->
+  <!-- <app-navbar *ngIf = "isLoggedIn && userRole === 'user'"></app-navbar> -->
+  <app-navbar *ngIf = "commonService.isUser()"></app-navbar>
+  <app-admin-navbar *ngIf = "commonService.isAdmin()"></app-admin-navbar>
+  <router-outlet></router-outlet>
 

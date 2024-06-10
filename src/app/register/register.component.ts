@@ -30,7 +30,8 @@ export class RegisterComponent  implements OnInit {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      this.commonService.addUser(this.registerForm.value).subscribe(
+      const formData = { ...this.registerForm.value, role: "user" };
+      this.commonService.addUser(formData).subscribe(
         response => {
           console.log('User added successfully', response);
           this.router.navigateByUrl("/login");

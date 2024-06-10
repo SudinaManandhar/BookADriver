@@ -7,8 +7,6 @@ import { PopupComponent } from '../popup/popup.component';
   providedIn: 'root'
 })
 export class NewServiceService {
-
-  // private itemIdToDelete: number | null = null;
   private apiUrl = 'http://localhost:3000/drivers'; 
 
   constructor(
@@ -28,6 +26,6 @@ export class NewServiceService {
   }
 
   async deleteItem(itemId: number) {
-    await this.http.delete(`${this.apiUrl}/${itemId}`).toPromise();
+    this.http.delete(`${this.apiUrl}/${itemId}`);
   }
 }

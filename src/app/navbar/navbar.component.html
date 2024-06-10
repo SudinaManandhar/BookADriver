@@ -7,16 +7,15 @@
       </ion-title>
     
       <ion-buttons slot="end">
-
         <ion-button routerLink="/bookedDrivers" routerDirection="forward" routerLinkActive="active">
          &nbsp; View Booked Drivers
-        </ion-button>
+      </ion-button>
 
-        <ion-button class="login"*ngIf="!this.commonService.isLoggedIn" routerLink="/login" routerDirection="forward" routerLinkActive="active">
+        <ion-button class="login" *ngIf="!this.commonService.isUser" routerLink="/login" routerDirection="forward" routerLinkActive="active">
           <ion-icon name="person-outline"></ion-icon> &nbsp; Login
         </ion-button>
 
-        <ion-button class = "logout" *ngIf="this.commonService.isLoggedIn" (click) = "logout()" routerDirection="forward" routerLinkActive="active">
+        <ion-button class = "logout" *ngIf="this.commonService.isUser" (click) = "logout()" routerDirection="forward" routerLinkActive="active">
            Logout
         </ion-button>
 

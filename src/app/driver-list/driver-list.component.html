@@ -1,6 +1,6 @@
 <body>
   <div class="back">
-    <button (click)="goBack()" class = "btn btn-secondary"><i class="fas fa-angle-left"></i>&nbsp;Back</button>
+    <button (click)="goBack()" class = "btn1"><i class="fas fa-angle-left"></i>&nbsp;Back</button>
   </div>
   
   <div class="heading">
@@ -8,7 +8,7 @@
   </div>
   
   <div class="table">
-    <table class="table table-success table-striped" alignment="center">
+    <table class="table">
       <thead>
         <tr>
           <th scope="col">Name</th>
@@ -24,18 +24,16 @@
           <td>{{ driver.address }}</td>
           <td>{{ driver.contact }}</td>
           <td>{{ driver.rate }}</td>
-          <td><button (click)="openDeletePopup(driver.id)" class = "btn btn-danger" tooltip="Delete Driver" placement="top"><i class="fas fa-trash"></i></button></td>
+          <td><button (click)="openDeletePopup(driver.id)" class = "btn" tooltip="Delete Driver" placement="top" container = "body"><i class="fas fa-trash"></i></button></td>
         </tr>
       </tbody>
     </table>
   </div>
     <div class="btns">
-      <ion-button (click)="onBookDriver()">Book A Driver</ion-button>&nbsp;
-      <ion-button (click)="onAddDriver()">Add A Driver</ion-button>
+      <ion-button (click)="onBookDriver()" class = "book">Book A Driver</ion-button>&nbsp;
+      <ion-button (click)="onAddDriver()" class = "add">Add A Driver</ion-button>
     </div>
-    
-  
-  
+
   <app-add-driver *ngIf="showForm" (driverAdded)="onDriverAdded()" (formClosed)="onFormClosed()"></app-add-driver>
   <app-book-driver *ngIf="showOption" (optionClosed)="onOptionClosed()"></app-book-driver>
 </body>

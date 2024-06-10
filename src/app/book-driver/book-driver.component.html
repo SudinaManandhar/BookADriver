@@ -2,24 +2,55 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <div class="popup-form">
+
   <h2>Book A Driver</h2>
+
   <div class="list">
     <select class="form-select" (change)="onSelect($event)">
         <option *ngFor = "let driver of drivers" [value]="driver.id">{{driver.name}}</option>
       </select>
   </div>
+
   <div class="card" *ngIf="selectedDriver">
-      <div class="card-header">
+    <div class="card-header">
         <b>Driver Details</b>
     </div> 
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">Name</th>
+          <td>{{ selectedDriver.name }}</td>
+        </tr>
+      </tbody>
 
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Name: {{ selectedDriver.name }}</li>
-      <li class="list-group-item"> <p>Address: {{ selectedDriver.address }}</li>
-      <li class="list-group-item">Contact: {{ selectedDriver.contact }}</li>
-      <li class="list-group-item">Hourly: {{ selectedDriver.rate }}</li>
-      <li class="list-group-item">Vehicle Type: {{ selectedDriver.type }}</li>
-      </ul>
+      <tbody>
+        <tr>
+          <th scope="row">Address</th>
+          <td>{{ selectedDriver.address }}</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <th scope="row">Contact</th>
+          <td>{{ selectedDriver.contact }}</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <th scope="row">Rate</th>
+          <td>{{ selectedDriver.rate }}</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <th scope="row">Vehicle Type</th>
+          <td>{{ selectedDriver.type }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="btns">
     <button class = "btn btn-primary" (click)="bookDriver()">Book Driver</button>&nbsp;

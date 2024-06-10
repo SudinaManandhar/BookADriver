@@ -1,0 +1,92 @@
+h2{
+    color: #191919;
+    font-size:xx-large !important;
+}
+.table{
+    margin: 2% 2.5% 0% 2.5%;
+    width: 95%;
+}
+
+td,th{
+    padding-left:3% !important;
+    background-color: #C4DFDF;
+}
+
+tr:hover td{
+    background-color:#45A29E;
+}
+
+.heading{
+    margin-top:4%;
+    margin-left:5%;
+}
+
+.btns{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.back{
+    display: inline;
+    float: inline-end;
+    margin: 3% 5% 0% 0%;
+}
+
+.fa-trash{
+    color:#dc0000;
+}
+
+.btn {
+    background-color: aliceblue;
+    border: none;
+}
+
+.btn1 {
+    background-color: #6b6b6b; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    margin-top:1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:2rem;
+  }
+  
+  .btn1:hover{
+    scale: 1.05;
+  }
+
+ion-button{
+    --border-radius: 2rem;
+}
+
+button{
+    border-radius: 2rem;
+}
+
+button.book, button.add{
+    background-color:#45A29E !important;
+}
+
+button:hover{
+    scale: 1.05;
+  }
+
+ion-button:hover{
+    scale: 1.05;
+}
+
+.confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #191919;
+  }

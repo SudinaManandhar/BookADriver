@@ -42,13 +42,17 @@ password: string = "";
         success => {
           if (success) {
             console.log('Login successful');
-            this.commonService.isLoggedIn = true;
-            this.router.navigateByUrl("/home");
+            if(this.commonService.isAdmin()){
+              this.router.navigateByUrl("/admin-dashboard");
+            }else if(this.commonService.isUser()){
+              this.router.navigateByUrl("/home");
+            }
+            
             localStorage.setItem("isLoggedIn","true");
             // Perform further actions on successful login
           } else {
             alert("Wrong Credential");
-            this.commonService.isLoggedIn = false;
+            // this.commonService.isLoggedIn = false;
           }
         }
       );

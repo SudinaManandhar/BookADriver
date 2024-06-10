@@ -61,6 +61,14 @@ body.body-div{
   border-radius: 3px;
 }
 
+.input-group button{
+  border-radius: 2rem !important;
+}
+
+button:hover{
+  scale: 1.05;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .login-form {

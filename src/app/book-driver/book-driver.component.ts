@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DriverService } from '../driver.service';
+import { CommonServiceService } from '../service/common-service.service';
 import { Location } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-book-driver',
@@ -14,7 +16,7 @@ export class BookDriverComponent  implements OnInit {
   drivers: any[] = [];
   selectedDriver: any | undefined;
 
-  constructor(private driverService: DriverService, private location: Location) { }
+  constructor(private http: HttpClient, private commonService: CommonServiceService, private driverService: DriverService, private location: Location) { }
 
   ngOnInit(): void {
       this.driverService.getDrivers().subscribe(data => {
@@ -40,17 +42,26 @@ export class BookDriverComponent  implements OnInit {
   bookDriver(): void {
     if (this.selectedDriver) {
       if(!this.selectedDriver.isBooked){
-      this.selectedDriver.isBooked = true;
-      this.driverService.updateDriver(this.selectedDriver).subscribe(updatedDriver => {
-        // Update the local drivers array with the updated driver
-        const index = this.drivers.findIndex(driver => driver.id === updatedDriver.id);
-        if (index !== -1) {
-          this.drivers[index] = updatedDriver;
-          alert("Driver has been booked");
-        }
-      });
-    } else {
-      alert("Driver has already been booked");
+        
+      const bookingDetails = {
+        user: this.commonService.getUserDetails(),
+        driver: this.selectedDriver
+      }
+
+      this.http.post('http://localhost:3000/booked',bookingDetails).subscribe(
+        () => {
+          this.selectedDriver.isBooked = true;
+          this.driverService.updateDriver(this.selectedDriver).subscribe(updatedDriver => {
+          // Update the local drivers array with the updated driver
+          const index = this.drivers.findIndex(driver => driver.id === updatedDriver.id);
+          if (index !== -1) {
+            this.drivers[index] = updatedDriver;
+            alert("Driver Has Been Booked");
+          }
+        });
+    });
+  } else {
+      alert("Driver Has Already Been Booked");
     }
   }
 }

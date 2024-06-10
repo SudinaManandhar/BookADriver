@@ -1,0 +1,42 @@
+<div class="popup-form">
+  <h3 class = "popop-title">Add A Booking</h3><br>
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+    <div class="row g-3">
+      
+      <div class="col">
+        <label for="name" class="form-label popup-label">Name</label>
+        <input id="name" class = "form-control popup-input" formControlName="name" type="text"><br>
+      </div>
+  
+      <div class="col">
+        <label for="address" class="form-label popup-label">Address:</label>
+        <input id="address" class = "form-control popup-input" formControlName="address" type="text"><br>
+      </div>
+    </div>
+
+    <div class = "row g-3">
+      <div class="col">
+        <label for="phone" class="form-label popup-label">Phone:</label>
+        <input id="phone" class = "form-control popup-input" formControlName="phone" type="text"><br>
+      </div>
+
+      <div class="col">
+        <label for="rate" class="form-label popup-label">Email: </label>
+        <input id="email" class = "form-control popup-input" formControlName="password" type="email"><br>
+      </div>
+    </div>
+      
+      
+    <div class = "row g-3">
+      <div class="col">
+        <label for="password" class="form-label popup-label">Password:</label>
+        <input id="password" class = "form-control popup-input" formControlName="password" type="text"><br>
+      </div>
+    </div>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Add Booking</button>&nbsp;
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>
