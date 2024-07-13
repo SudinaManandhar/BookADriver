@@ -65,6 +65,24 @@
       "password": "admin123",
       "role": "admin",
       "id": "2327"
+    },
+    {
+      "id": "6f61",
+      "name": "Himal Shrestha",
+      "address": "Kalanki",
+      "phone": "9843745785",
+      "email": "sthahimal@gmail.com",
+      "password": "sthahimal",
+      "role": "user"
+    },
+    {
+      "id": "e23a",
+      "name": "Saroj",
+      "address": "Thapa",
+      "phone": "9837843249",
+      "email": "thapasaroj@gmail.com",
+      "password": "thapasaroj",
+      "role": "user"
     }
   ],
   "booked": [
@@ -130,28 +148,6 @@
         "contact": "9837483243",
         "rate": 150,
         "availability": "Lalitpur",
-        "type": "Maruti Suzuki",
-        "isBooked": false
-      }
-    },
-    {
-      "id": "abfe",
-      "user": {
-        "id": "c530",
-        "name": "Daina",
-        "address": "Delhi",
-        "phone": "9890384922",
-        "email": "diana@gmail.com",
-        "password": "daina",
-        "role": "user"
-      },
-      "driver": {
-        "id": "18",
-        "name": "Simon Ghimire",
-        "address": "Pulchowk",
-        "contact": "9809787437",
-        "rate": "100",
-        "availability": "Kathmandu",
         "type": "Maruti Suzuki",
         "isBooked": false
       }

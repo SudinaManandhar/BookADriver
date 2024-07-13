@@ -17,17 +17,19 @@ export class BookingService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getDriver(id: string): Observable<any> {
+    return this.http.get<any>(`${this.driverUrl}/${id}`);
+  }
+
+  updateDriver(driver: any): Observable<any> {
+    return this.http.put<any>(`${this.driverUrl}/${driver.id}`, driver);
+  }
+
   updateDriverBookingStatus(driverId: string, isBooked: boolean): Observable<any> {
     return this.http.patch<any>(`${this.apiUrl}/drivers/${driverId}`, { isBooked });
   }
 
   deleteBooking(bookingId: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/booked/${bookingId}`);
-  }
-
-  deleteBookingAndToggleDriver(bookingId: string, driverId: string): Observable<any> {
-    return this.updateDriverBookingStatus(driverId, false).pipe(
-      switchMap(() => this.deleteBooking(bookingId))
-    );
+    return this.http.delete<any>(`${this.apiUrl}/${bookingId}`);
   }
 }

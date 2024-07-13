@@ -1,1 +1,23 @@
-
+<div class="dashboard">
+    <h2>Dashboard</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>Total Users</h3>
+        <p>{{ totalUsers }}</p>
+      </div>
+      <div class="stat">
+        <h3>Total Drivers</h3>
+        <p>{{ totalDrivers }}</p>
+      </div>
+      <div class="stat">
+        <h3>Total Bookings</h3>
+        <p>{{ totalBookings }}</p>
+      </div>
+    </div>
+    <h5>Analytics</h5>
+    <div class="charts-container">
+        <div echarts [options]="driverStatusChartOptions" class="chart"></div>
+        <div echarts [options]="bookingsPerUserChartOptions" class="chart"></div>
+        <div echarts [options]="driverTypesCountChartOptions" class="chart"></div>
+    </div>
+  </div>

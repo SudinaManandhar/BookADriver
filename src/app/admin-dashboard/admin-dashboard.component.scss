@@ -1,0 +1,48 @@
+.dashboard {
+    margin-left: 20%; 
+    margin-right: 3%;
+    text-align: center;
+  }
+
+
+
+h2, h5{
+    color:#191919;
+    text-align: left;
+    
+}
+  
+  .stats {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .stat {
+    background-color: #C4DFDF;
+    color: #191919;
+    padding: 10px;
+    width: 30%;
+  }
+
+  .stat:hover{
+    background-color:#45A29E;
+}
+  
+.charts-container {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between charts */
+  }
+  
+  .chart {
+    flex: 1; /* Flex-grow so charts take equal width */
+    min-width: 0; /* Prevent overflow */
+    height: 400px; /* Set a consistent height for charts */
+    /* Optional: Add some padding and border */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  

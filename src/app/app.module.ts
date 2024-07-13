@@ -6,6 +6,7 @@ import { HttpErrorInterceptor } from './http-error.interceptor';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { BookedDriversComponent } from './booked-drivers/booked-drivers.component';
 import { DriverDetailsComponent } from './driver-details/driver-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -21,9 +22,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { DriverService } from './driver.service';
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, BookedDriversComponent, NotFoundComponent, DriverDetailsComponent, AdminNavbarComponent, AdminCustomerListComponent, AdminBookingComponent],
-  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, TooltipModule.forRoot(), CommonModule],
+  declarations: [AppComponent, NavbarComponent, BookedDriversComponent, NotFoundComponent, DriverDetailsComponent, AdminNavbarComponent, AdminCustomerListComponent, AdminBookingComponent, AdminDashboardComponent],
+  imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, TooltipModule.forRoot(), CommonModule, NgxEchartsModule.forRoot({ echarts: () => import('echarts') }), NgxDatatableModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, DriverService, {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi:true }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA ]

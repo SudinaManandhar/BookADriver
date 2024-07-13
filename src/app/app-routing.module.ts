@@ -16,6 +16,7 @@ const routes: Routes = [
   // },
   {
     path: 'admin-dashboard',
+    title: 'Dashboard | BookADriver',
     loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardModule),
     canActivate: [AuthGuard], data: { role: 'admin' }
   },
