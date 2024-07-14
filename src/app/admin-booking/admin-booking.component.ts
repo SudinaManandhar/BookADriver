@@ -18,6 +18,9 @@ export class AdminBookingComponent  implements OnInit {
   bookingIdToDelete: string | null=null;
   driverIdToUpdate: string | null=null;
   showForm = false;
+  searchTerm: string = '';
+  sortColumn: string = 'name';
+  sortDirection: string = 'asc';
 
   constructor(private http:HttpClient, private location:Location, private bookingService: BookingService, private commonService: CommonServiceService) { }
 
@@ -28,12 +31,44 @@ export class AdminBookingComponent  implements OnInit {
   loadBookings(): void {
     this.bookingService.getBooking().subscribe(data => {
       this.bookings = data;
+      console.log(this.bookings);
     });
   }
+
+  // loadBookings() {
+  //   console.log(this.http.get<any[]>('http://localhost:3000/booked'));
+  //   this.http.get<any[]>('http://localhost:3000/booked');
+  //   }
   
   goBack(): void{
     this.location.back();
   }
+
+  get filteredBookings() {
+    
+    const filtered = this.bookings.filter(booking => 
+      booking.driver.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      booking.driver.contact.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      booking.driver.rate.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      booking.user.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      booking.user.phone.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+
+    return filtered.sort((a, b) => {
+      if (a[this.sortColumn] < b[this.sortColumn]) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      } if (a[this.sortColumn] > b[this.sortColumn]) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      } 
+      return 0;
+    });
+  }
+
+  onSort(event: any) {
+    this.sortColumn = event.column.prop;
+    this.sortDirection = event.sorts[0].dir;
+  }
+
 
   confirmDelete(bookId: string, driverId: string): void {
     this.bookingIdToDelete = bookId;

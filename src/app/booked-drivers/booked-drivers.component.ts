@@ -13,6 +13,10 @@ export class BookedDriversComponent  implements OnInit {
   drivers: any[]=[];
   showDetailsPopup: boolean = false;
   selectedDriverId: string | undefined;
+
+  searchTerm: string = '';
+  sortColumn: string = 'name';
+  sortDirection: string = 'asc';
   
   constructor(private driverService: DriverService, private newService: NewServiceService, private location: Location) { }
 
@@ -24,6 +28,30 @@ export class BookedDriversComponent  implements OnInit {
   this.driverService.getDrivers().subscribe(data => {
     this.drivers = data.filter(driver => driver.isBooked);
   });
+}
+
+get filteredBookedDrivers() {
+    
+  const filtered = this.drivers.filter(driver => 
+    driver.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+    driver.address.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+    driver.contact.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+    driver.rate.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+  );
+
+  return filtered.sort((a, b) => {
+    if (a[this.sortColumn] < b[this.sortColumn]) {
+      return this.sortDirection === 'asc' ? -1 : 1;
+    } if (a[this.sortColumn] > b[this.sortColumn]) {
+      return this.sortDirection === 'asc' ? 1 : -1;
+    } 
+    return 0;
+  });
+}
+
+onSort(event: any) {
+  this.sortColumn = event.column.prop;
+  this.sortDirection = event.sorts[0].dir;
 }
 
 openDeletePopup(driverId: number) {

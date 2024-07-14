@@ -1,13 +1,8 @@
-<body>
+
   <div class="content">
-    <div class="back">
-      <button (click)="goBack()" class = "btn1"><i class="fas fa-angle-left"></i>&nbsp;Back</button>
-    </div>
     
-    <div class="heading">
       <h2>List of Customers</h2>
-    </div>
-    
+  
     <!-- <div class="table">
       <table class="table">
         <thead>
@@ -33,11 +28,9 @@
     </div> -->
 
     <div class="container">
-
-      <button (click)="goBack()" class="btn btn-secondary">Back</button>
   
       <!-- Search Box -->
-      <div class="search-container">
+      <div class="search-container mb-3">
         <input
           type="text"
           [(ngModel)]="searchTerm"
@@ -47,6 +40,7 @@
       </div>
 
       <ngx-datatable class="bootstrap"
+      style="height: 250px;"
       [rows]="filteredUsers"
       [headerHeight]="50"
       [footerHeight]="50"
@@ -93,8 +87,5 @@
       </div>
     </div>
   </div>
-  
-
-</body>
 
 

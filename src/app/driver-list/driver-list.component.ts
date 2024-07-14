@@ -16,6 +16,10 @@ export class DriverListComponent implements OnInit {
   showForm = false;
   showOption = false;
 
+  searchTerm: string = '';
+  sortColumn: string = 'name';
+  sortDirection: string = 'asc';
+
   constructor(private driverService: DriverService, private newService: NewServiceService, private location: Location, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -34,6 +38,31 @@ export class DriverListComponent implements OnInit {
     this.http.get<any[]>('http://localhost:3000/drivers').subscribe(data => {
       this.drivers = data;
     });
+  }
+
+  
+  get filteredDrivers() {
+    
+    const filtered = this.drivers.filter(driver => 
+      driver.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      driver.address.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      driver.contact.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+      driver.rate.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+    );
+
+    return filtered.sort((a, b) => {
+      if (a[this.sortColumn] < b[this.sortColumn]) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      } if (a[this.sortColumn] > b[this.sortColumn]) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      } 
+      return 0;
+    });
+  }
+
+  onSort(event: any) {
+    this.sortColumn = event.column.prop;
+    this.sortDirection = event.sorts[0].dir;
   }
 
   onAddDriver() {

@@ -1,21 +1,12 @@
-// *{
-// box-sizing: border-box;
-// margin:0;
-// padding:0;
-// list-style: none;
-// text-decoration: none;
-// font-family:Verdana, Geneva, Tahoma, sans-serif; 
-// }
-
 nav{
-position:absolute;
+position:fixed;
 top:0;
-bottom:0;
+// bottom:0;
 height:100%;
 left:0;
-background:#046D6D;
+background:#191919;
 width:250px;
-overflow:hidden;
+overflow-y:hidden;
 transition: width 0.2s linear;
 }
 
@@ -43,15 +34,20 @@ text-transform: uppercase;
 
 ul{
 padding:0;
+margin: 0;
+}
+
+li{
+    list-style: none;
 }
 
 a{
 position:relative;
 color:#fff;
 font-size:15px;
-display:table;
+display:block;
 font-weight:500;
-width: 300px;
+width: 100%;
 padding:10px;
 text-decoration:none;
 }

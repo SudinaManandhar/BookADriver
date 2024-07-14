@@ -22,6 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'customer-list',
+    title: 'Customer List | BookADriver',
     loadChildren: () => import('./admin-customer-list/admin-customer-list.module').then( m => m.AdminCustomerListModule)
     // canActivate: [AuthGuard], data: { role: 'admin' }
   },

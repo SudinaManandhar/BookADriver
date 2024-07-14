@@ -9,7 +9,7 @@
     <h2>List of Booked Drivers</h2>
   </div>
   
-  <div class="table">
+  <!-- <div class="table">
     <table class="table" alignment = "center">
       <thead>
         <tr>
@@ -31,6 +31,50 @@
         </tr>
       </tbody>
     </table>
+  </div> -->
+
+  <div class="container">
+  
+    <!-- Search Box -->
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Search..."
+        class="form-control"
+      />
+    </div>
+
+    <ngx-datatable class="bootstrap"
+    style="height: 250px;"
+    [rows]="filteredBookedDrivers"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="40"
+    [columnMode]="'force'"
+    [scrollbarV]="true"
+    [pagination]="true"
+    [limit]="10"
+    [count]="filteredBookedDrivers.length"
+    (sort)="onSort($event)"
+  >
+
+  <ngx-datatable-column name="Driver's Name" prop="name" [sortable]="true"></ngx-datatable-column>
+  <ngx-datatable-column name="Driver's Address" prop="address" [sortable]="true"></ngx-datatable-column>
+  <ngx-datatable-column name="Driver's Contact" prop="contact" [sortable]="true"></ngx-datatable-column>
+  <ngx-datatable-column name="Hourly Rate" prop="rate" [sortable]="true"></ngx-datatable-column>
+  <ngx-datatable-column name="Actions" [sortable]="false">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <button (click)="openDeletePopup(row.id)" class = "btn" tooltip = "Delete Booked Driver" placement="top" container="body">
+        <i class="fas fa-trash"></i>
+      </button>&nbsp;
+      <button (click)="openDetailsPopup(row.id)" class = "btn" tooltip="View Details" placement="top" container="body">
+        <i class="fas fa-eye"></i>
+      </button>
+    </ng-template>
+  </ngx-datatable-column>
+
+</ngx-datatable>
   </div>
   <app-driver-details *ngIf="showDetailsPopup" [driverId]="selectedDriverId" (popUpClosed)="onPopUpClosed()"></app-driver-details>
 </body>
