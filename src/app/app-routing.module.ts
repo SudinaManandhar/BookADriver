@@ -23,17 +23,30 @@ const routes: Routes = [
   {
     path: 'customer-list',
     title: 'Customer List | BookADriver',
-    loadChildren: () => import('./admin-customer-list/admin-customer-list.module').then( m => m.AdminCustomerListModule)
-    // canActivate: [AuthGuard], data: { role: 'admin' }
+    loadChildren: () => import('./admin-customer-list/admin-customer-list.module').then( m => m.AdminCustomerListModule),
+    canActivate: [AuthGuard], data: { role: 'admin' }
+  },
+  {
+    path: 'admin-driver-list',
+    title: 'Admin Driver List | BookADriver',
+    loadChildren: () => import('./admin-driver-list/admin-driver-list.module').then( m => m.AdminDriverListModule),
+    canActivate: [AuthGuard], data: { role: 'admin' }
   },
   {
     path: 'driver-list',
+    title: 'Driver List | BookADriver',
     loadChildren: () => import('./driver-list/driver-list.module').then( m => m.DriverListModule)
   },
   {
+    path: 'edit-profile',
+    title: 'Edit Profile | BookADriver',
+    loadChildren: () => import('./edit-profile/edit-profile.module').then(m => m.EditProfileModule),
+    canActivate: [AuthGuard], data: { role : 'user'}
+  },
+  {
     path: 'booking-list',
-    loadChildren: () => import('./admin-booking/admin-booking.module').then( m => m.AdminBookingModule)
-    // canActivate: [AuthGuard], data: { role: 'admin' }
+    loadChildren: () => import('./admin-booking/admin-booking.module').then( m => m.AdminBookingModule),
+    canActivate: [AuthGuard], data: { role: 'admin' }
   },
   {
     path: '',

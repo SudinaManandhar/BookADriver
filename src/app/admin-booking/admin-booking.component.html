@@ -21,7 +21,6 @@
       [footerHeight]="50"
       [rowHeight]="40"
       [columnMode]="'force'"
-      [scrollbarV]="true"
       [pagination]="true"
       [limit]="10"
       [count]="filteredBookings.length"
@@ -30,14 +29,30 @@
 
     <ngx-datatable-column name="Driver's Name" prop="driver.name" [sortable]="true"></ngx-datatable-column>
     <ngx-datatable-column name="Driver's Contact" prop="driver.contact" [sortable]="true"></ngx-datatable-column>
-    <ngx-datatable-column name="Hourly Rate" prop="driver.rate" [sortable]="true"></ngx-datatable-column>
+    <!-- <ngx-datatable-column name="Hourly Rate" prop="driver.rate" [sortable]="true"></ngx-datatable-column> -->
     <ngx-datatable-column name="Customer's Name" prop="user.name" [sortable]="true"></ngx-datatable-column>
     <ngx-datatable-column name="Customer's Contact" prop="user.phone" [sortable]="true"></ngx-datatable-column>
+    <ngx-datatable-column name="Pickup Location" prop="pickupLocation" [sortable]="true"></ngx-datatable-column>
+    <ngx-datatable-column name="Drop Location" prop="dropLocation" [sortable]="true"></ngx-datatable-column>
+    <!-- <ngx-datatable-column name="Time" prop="time" [sortable]="true"></ngx-datatable-column> -->
+    <ngx-datatable-column name="Time" [sortable]="true">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{ formatTime(row.time) }}
+      </ng-template>
+    </ngx-datatable-column>
     <ngx-datatable-column name="Actions" [sortable]="false">
       <ng-template let-row="row" ngx-datatable-cell-template>
         <button (click)="confirmDelete(row.id, row.driver.id)" class = "btn" tooltip="Delete Booking" placement="top" container = "body">
           <i class="fas fa-trash"></i>
         </button>  
+
+        <button (click)="confirmDelete(row.id, row.driver.id)" class="btn btn-danger" tooltip="Edit User" placement="top" container="body">
+          <i class="fas fa-pencil-alt"></i>
+        </button>
+
+        <button (click)="confirmDelete(row.id, row.driver.id)" class="btn btn-danger" tooltip="View User" placement="top" container="body">
+          <i class="fas fa-eye"></i>
+        </button>
       </ng-template>
     </ngx-datatable-column>
   
@@ -45,7 +60,7 @@
     </div>
   
     <div class="btns">
-      <ion-button (click) = "bookDriver()" class = "book">Book A Driver</ion-button>&nbsp;
+      <ion-button (click) = "bookDriver()" class = "book">Add Booking</ion-button>&nbsp;
     </div>
   
     <div *ngIf="showConfirmation" class="confirmation-popup">

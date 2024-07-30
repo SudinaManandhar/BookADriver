@@ -18,6 +18,18 @@ margin-top: 3%;
 background-color: #f8f9fa;
 border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// overflow-x: auto;
+//   -webkit-overflow-scrolling: touch;
+}
+
+ngx-datatable {
+  width: 100%;
+  table-layout: fixed;
+  overflow: scroll;
+}
+
+ngx-datatable-column {
+  min-width: 220px !important; // Set a minimum width for columns
 }
 
 .search-container {
@@ -129,6 +141,14 @@ margin-bottom: 20px;
 
 .fa-trash{
     color:#dc0000;
+}
+
+.fa-pencil-alt{
+  color: #26438c;
+}
+
+.fa-eye{
+  color:#007bff;
 }
 
 .btn {

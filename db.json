@@ -8,7 +8,7 @@
       "rate": "100",
       "availability": "Kathmandu",
       "type": "Maruti Suzuki",
-      "isBooked": false
+      "isBooked": true
     },
     {
       "id": "1",
@@ -46,7 +46,7 @@
       "id": "9430",
       "name": "Sona Shrestha",
       "address": "Paknajol",
-      "phone": "9894784373",
+      "phone": "9894784374",
       "email": "sonastha@gmail.com",
       "password": "sonastha",
       "role": "user"
@@ -151,6 +151,31 @@
         "type": "Maruti Suzuki",
         "isBooked": false
       }
+    },
+    {
+      "id": "21ab",
+      "user": {
+        "id": "9430",
+        "name": "Sona Shrestha",
+        "address": "Paknajol",
+        "phone": "9894784374",
+        "email": "sonastha@gmail.com",
+        "password": "sonastha",
+        "role": "user"
+      },
+      "driver": {
+        "id": "18",
+        "name": "Simon Ghimire",
+        "address": "Pulchowk",
+        "contact": "9809787437",
+        "rate": "100",
+        "availability": "Kathmandu",
+        "type": "Maruti Suzuki",
+        "isBooked": false
+      },
+      "pickupLocation": "Paknajol",
+      "dropLocation": "Banepa",
+      "time": "2024-07-30T10:00"
     }
   ]
 }

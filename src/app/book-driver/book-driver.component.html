@@ -52,6 +52,25 @@
       </tbody>
     </table>
   </div>
+
+  <br>
+  <div class="row g-3">
+    <div class="col">
+      <label for="pickupLocation">Pickup Location</label>
+      <input type="text" class="form-control" id="pickupLocation" [(ngModel)]="pickupLocation" placeholder="Enter pickup location">
+    </div>
+  
+    <div class="col">
+      <label for="dropLocation">Drop Location</label>
+      <input type="text" class="form-control" id="dropLocation" [(ngModel)]="dropLocation" placeholder="Enter drop location">
+    </div>
+  </div>
+
+  <div class="form-group mt-3">
+    <label for="time">Time</label>
+    <input type="datetime-local" class="form-control" id="time" [(ngModel)]="time">
+  </div>
+
   <div class="btns">
     <button class = "btn btn-primary" (click)="bookDriver()">Book Driver</button>&nbsp;
     <button class = "btn btn-secondary" (click)="onCancel()">Cancel</button>

@@ -1,3 +1,92 @@
-<p>
-  admin-driver-list works!
-</p>
+
+  <!-- <div class="back">
+    <button (click)="goBack()" class = "btn1"><i class="fas fa-angle-left"></i>&nbsp;Back</button>
+  </div> -->
+  
+  <div class="content">
+    <h2>List of Drivers</h2>
+ 
+  
+    <!-- <div class="table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Hourly Rate</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let driver of drivers">
+            <td>{{ driver.name }}</td>
+            <td>{{ driver.address }}</td>
+            <td>{{ driver.contact }}</td>
+            <td>{{ driver.rate }}</td>
+            <td><button (click)="openDeletePopup(driver.id)" class = "btn" tooltip="Delete Driver" placement="top" container = "body"><i class="fas fa-trash"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+  
+    <div class="container">
+    
+      <!-- Search Box -->
+      <div class="search-container mb-3">
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          placeholder="Search..."
+          class="form-control"
+        />
+      </div>
+  
+      <ngx-datatable class="bootstrap"
+      style="height: 250px;"
+      [rows]="filteredDrivers"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="40"
+      [columnMode]="'force'"
+      [scrollbarV]="true"
+      [pagination]="true"
+      [limit]="10"
+      [count]="filteredDrivers.length"
+      (sort)="onSort($event)"
+    >
+  
+    <ngx-datatable-column name="Driver's Name" prop="name" [sortable]="true"></ngx-datatable-column>
+    <ngx-datatable-column name="Driver's Address" prop="address" [sortable]="true"></ngx-datatable-column>
+    <ngx-datatable-column name="Driver's Contact" prop="contact" [sortable]="true"></ngx-datatable-column>
+    <ngx-datatable-column name="Hourly Rate" prop="rate" [sortable]="true"></ngx-datatable-column>
+    <ngx-datatable-column name="Actions" [sortable]="false">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <button (click)="openDeletePopup(row.id)" class = "btn" tooltip="Delete Driver" placement="top" container = "body">
+          <i class="fas fa-trash"></i>
+        </button>
+
+        <button (click)="openDeletePopup(row.id)" class="btn btn-danger" tooltip="Edit User" placement="top" container="body">
+          <i class="fas fa-pencil-alt"></i>
+        </button>
+
+        <button (click)="openDeletePopup(row.id)" class="btn btn-danger" tooltip="View User" placement="top" container="body">
+          <i class="fas fa-eye"></i>
+        </button>
+      </ng-template>
+    </ngx-datatable-column>
+  
+  </ngx-datatable>
+    </div>
+      <div class="btns">
+        <!-- <ion-button (click)="onBookDriver()" class = "book">Book A Driver</ion-button>&nbsp; -->
+        <ion-button (click)="onAddDriver()" class = "add" *ngIf = "commonService.isAdmin()">Add A Driver</ion-button>
+      </div>
+  
+    <app-add-driver *ngIf="showForm" (driverAdded)="onDriverAdded()" (formClosed)="onFormClosed()"></app-add-driver>
+    <app-book-driver *ngIf="showOption" (optionClosed)="onOptionClosed()"></app-book-driver>
+  </div>
+    
+
+
+

@@ -3,10 +3,11 @@ ion-toolbar.nav{
     --color: #fff;
 }
 
-ion-button.login, ion-button.logout{
-    --background: #ecad0c;
-    --border-radius:15px;
-    --padding: 5px;
+::ng-deep{
+    ion-popover.select-popover {
+        margin-top:1.25% !important;
+        margin-right: 3% !important;
+    }
 }
 
 ion-button:hover{
@@ -23,4 +24,8 @@ ion-buttons{
 
 ion-title{
     margin-left: 5%;
+}
+
+ion-select{
+    width: auto;
 }

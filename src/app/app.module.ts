@@ -11,8 +11,10 @@ import { BookedDriversComponent } from './booked-drivers/booked-drivers.componen
 import { DriverDetailsComponent } from './driver-details/driver-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminCustomerListComponent } from './admin-customer-list/admin-customer-list.component';
+import { AdminDriverListComponent } from './admin-driver-list/admin-driver-list.component';
 import { AdminBookingComponent } from './admin-booking/admin-booking.component';
 import { DriverListComponent } from './driver-list/driver-list.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 import { AddDriverComponent } from './add-driver/add-driver.component';
 import { BookDriverComponent } from './book-driver/book-driver.component';
@@ -33,7 +35,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgxSummernoteModule } from 'ngx-summernote';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, BookedDriversComponent, NotFoundComponent, DriverDetailsComponent, AdminNavbarComponent, AdminCustomerListComponent, AdminBookingComponent, AdminDashboardComponent, DriverListComponent, AddDriverComponent, BookDriverComponent, PopupComponent, RegisterComponent],
+  declarations: [AppComponent, NavbarComponent, BookedDriversComponent, NotFoundComponent, DriverDetailsComponent, AdminNavbarComponent, AdminCustomerListComponent, AdminBookingComponent, AdminDashboardComponent, AdminDriverListComponent, DriverListComponent, AddDriverComponent, BookDriverComponent, PopupComponent, RegisterComponent, EditProfileComponent],
   imports: [BrowserModule, FormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, TooltipModule.forRoot(), CommonModule, NgxEchartsModule.forRoot({ echarts: () => import('echarts') }), NgxDatatableModule, NgxSummernoteModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, DriverService, {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi:true }],
   bootstrap: [AppComponent],

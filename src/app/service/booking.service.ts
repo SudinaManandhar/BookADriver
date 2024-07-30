@@ -17,6 +17,10 @@ export class BookingService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getBookingById(driverId: string): Observable<any[]>{
+    return this.http.get<any[]>(`${this.apiUrl}/driver/${driverId}`);
+  }
+
   getDriver(id: string): Observable<any> {
     return this.http.get<any>(`${this.driverUrl}/${id}`);
   }

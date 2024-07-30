@@ -35,8 +35,7 @@ get filteredBookedDrivers() {
   const filtered = this.drivers.filter(driver => 
     driver.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
     driver.address.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-    driver.contact.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-    driver.rate.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+    driver.contact.toLowerCase().includes(this.searchTerm.toLowerCase()) 
   );
 
   return filtered.sort((a, b) => {

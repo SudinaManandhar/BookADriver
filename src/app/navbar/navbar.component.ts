@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonServiceService } from '../service/common-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { CommonServiceService } from '../service/common-service.service';
 })
 export class NavbarComponent  implements OnInit {
 
-  constructor(public commonService: CommonServiceService) { 
+  constructor(public commonService: CommonServiceService, private router: Router) { 
     
   }
 
@@ -21,6 +22,25 @@ export class NavbarComponent  implements OnInit {
 
   logout() {
     this.commonService.logout();
+  }
+
+  editProfile(){
+
+  }
+
+  onSelect(event: any){
+    const selectedValue = event.detail.value;
+    if(selectedValue === "logout"){
+      this.logout();
+    }
+    else if(selectedValue === 'editProfile'){
+      console.log(selectedValue);
+      this.router.navigate(['/edit-profile']);
+    }
+
+    setTimeout(() => {
+      (event.target as HTMLSelectElement).value = ''; // Clear the selection
+    });
   }
 
 }

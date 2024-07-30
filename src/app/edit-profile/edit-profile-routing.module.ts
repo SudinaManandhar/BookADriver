@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminDriverListComponent } from './admin-driver-list.component';
+import { EditProfileComponent } from './edit-profile.component';
 
 const routes: Routes = [
   {
     path: '',
-    title: 'Admin Driver List | BookYourDriver',
-    component: AdminDriverListComponent
-  },
+    component: EditProfileComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminDriverListRoutingModule { }
+export class EditProfileRoutingModule { }

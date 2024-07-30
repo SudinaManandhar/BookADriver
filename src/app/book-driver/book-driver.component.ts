@@ -15,6 +15,9 @@ export class BookDriverComponent  implements OnInit {
 
   drivers: any[] = [];
   selectedDriver: any | undefined;
+  pickupLocation: string='';
+  dropLocation: string='';
+  time: string='';
 
   constructor(private http: HttpClient, private commonService: CommonServiceService, private driverService: DriverService, private location: Location) { }
 
@@ -45,7 +48,10 @@ export class BookDriverComponent  implements OnInit {
         
       const bookingDetails = {
         user: this.commonService.getUserDetails(),
-        driver: this.selectedDriver
+        driver: this.selectedDriver,
+        pickupLocation: this.pickupLocation,
+        dropLocation: this.dropLocation,
+        time: this.time
       }
 
       this.http.post('http://localhost:3000/booked',bookingDetails).subscribe(

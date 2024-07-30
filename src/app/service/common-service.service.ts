@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, forkJoin } from 'rxjs';
-import { map,tap,switchMap  } from 'rxjs/operators';
+import { Observable, forkJoin, of } from 'rxjs';
+import { map,tap,switchMap, catchError  } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 interface Users{
@@ -65,6 +65,20 @@ export class CommonServiceService {
 
   getUserDetails(){
     return this.currentUser;
+  }
+
+  // Update user profile
+  updateUserProfile(user: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${user.id}`, user).pipe(
+      catchError(this.handleError<any>('updateUserProfile', user))
+    );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(`${operation} failed: ${error.message}`);
+      return of(result as T);
+    };
   }
 
   getBookingsByCustomerId(customerId: string): Observable<any[]> {

@@ -3,21 +3,30 @@
   <ion-toolbar class = "nav">
     
       <ion-title class = "title" routerLink = "/home">
-        BookYourDriver
+        BookADriver
       </ion-title>
     
       <ion-buttons slot="end">
         <ion-button routerLink="/bookedDrivers" routerDirection="forward" routerLinkActive="active">
-         &nbsp; View Booked Drivers
+        View Booked Drivers
       </ion-button>
 
         <ion-button class="login" *ngIf="!this.commonService.isUser" routerLink="/login" routerDirection="forward" routerLinkActive="active">
           <ion-icon name="person-outline"></ion-icon> &nbsp; Login
         </ion-button>
 
-        <ion-button class = "logout" *ngIf="this.commonService.isUser" (click) = "logout()" routerDirection="forward" routerLinkActive="active">
+        <!-- <ion-button class = "logout" *ngIf="this.commonService.isUser" (click) = "logout()" routerDirection="forward" routerLinkActive="active">
            Logout
-        </ion-button>
+        </ion-button> -->
+
+       
+
+            <ion-select interface="popover" (ionChange)="onSelect($event)">
+              <ion-select-option value="logout" (click) = "logout()"><ion-icon name="log-out-outline"></ion-icon> &nbsp;Logout</ion-select-option>
+              <ion-select-option value="editProfile"><ion-icon name="create-outline"></ion-icon> &nbsp;Edit Your Information</ion-select-option>
+            </ion-select>
+          
+        
 
       </ion-buttons>
   </ion-toolbar>
